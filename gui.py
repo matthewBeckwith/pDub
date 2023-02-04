@@ -25,6 +25,10 @@ class GUI(tk.Frame):
         for row in self.rows:
             self.password_list.insert(tk.END, row[0])
         self.password_list.pack()
+        
+        # DELETE a saved password
+        self.del_btn = tk.Button(self, text="DELETE", width=5, height=3, command=self.delete)
+        self.del_btn.pack()
 
         self.mainloop()
 
@@ -41,3 +45,5 @@ class GUI(tk.Frame):
         else:
             self.generate()
 
+    def delete(self):
+        print("DELETED!")
