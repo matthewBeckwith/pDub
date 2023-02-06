@@ -6,7 +6,9 @@ class Dub:
     def __init__(self):
         self.con = sqlite3.connect("data.db")
         self.c = self.con.cursor()
-        self.c.execute('''CREATE TABLE IF NOT EXISTS dubs(name TEXT, password TEXT, created_date TEXT)''')
+        self.c.execute('''CREATE TABLE IF NOT EXISTS dubs(
+            id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, password TEXT, created_date TEXT
+        )''')
 
         self.rows = []
 
